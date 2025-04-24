@@ -6,7 +6,7 @@ let isConnected = false;
 
 const handler = serverless(app);
 
-export const main = async (event, context) => {
+export default async (event, context) => {
   if (!isConnected) {
     await connectToDatabase();
     isConnected = true;
