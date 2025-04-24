@@ -36,7 +36,7 @@ app.use(errorMiddleware);
 
 app.get("/", (req, res) => {
   console.log("Root route hit");
-  res.status(200).send("Welcome to the Subscription Tracker API!");
+  res.status(200).json({ message: "Welcome to the Subscription Tracker API!" });
 });
 
 export default serverless(app);
