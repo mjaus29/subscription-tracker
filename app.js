@@ -22,6 +22,7 @@ app.use("/api/v1/workflows", workflowRouter);
 app.use(errorMiddleware);
 
 app.get("/", (req, res) => {
+  console.log("Root route hit");
   res.send("Welcome to the Subscription Tracker API!");
 });
 

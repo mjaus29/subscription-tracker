@@ -1,11 +1,11 @@
 // lib/connectToDatabase.js
 import mongoose from "mongoose";
-import { DB_URI, NODE_ENV } from "../config/env.js"; // Import DB_URI and NODE_ENV
+import { DB_URI, NODE_ENV } from "../config/env.js";
 
 let isConnected = false;
 
 const connectToDatabase = async () => {
-  if (isConnected) return mongoose.connection; // If already connected, return the connection
+  if (isConnected) return mongoose.connection;
 
   if (!DB_URI) {
     throw new Error("Please define the MONGODB_URI environment variable.");
