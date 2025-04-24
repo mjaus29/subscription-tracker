@@ -9,10 +9,7 @@ if (!DB_URI) {
 
 const connectToDatabase = async () => {
   try {
-    await mongoose.connect(DB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(DB_URI);
 
     console.log(`Connected to database in ${NODE_ENV} mode`);
   } catch (error) {
