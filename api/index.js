@@ -2,10 +2,14 @@ import serverless from "serverless-http";
 import app from "../app.js";
 import connectToDatabase from "../database/mongodb.js";
 
-await connectToDatabase();
+let handler;
 
-const handler = serverless(app);
+export default async (req, res) => {
+  await connectToDatabase();
 
-export default async (event, context) => {
-  return handler(event, context);
+  if (!handler) {
+    handler = serverless(app);
+  }
+
+  return handler(req, res);
 };
